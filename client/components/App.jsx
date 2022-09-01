@@ -1,11 +1,24 @@
 import React from 'react'
+//import Pixel from './Pixel'
+import { Routes, Route } from 'react-router-dom'
+import NewPage from './NewPage'
+import Nav from './Nav'
+import Home from './Home'
+import Tamers from './Tamers'
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-      <p>React development has begun!</p>
-    </div>
+    <>
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/newpage" element={<NewPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/tamer/:id" element={<Tamers />} />
+        </Routes>
+        <p>hi</p>
+      </div>
+    </>
   )
 }
 
